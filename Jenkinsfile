@@ -36,6 +36,7 @@ pipeline {
                        sh 'docker --version'
                         echo 'maven build'        
                         sh 'mvn clean package'
+                       sh 'docker rm agustin-nexus'
                                 
                       sh  'docker build -t agustin-nexus .'
                       sh 'docker container run -p 8765:8765 --name agustin-nexus --network agu-network  agustin-nexus'
