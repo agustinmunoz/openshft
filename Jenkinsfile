@@ -31,15 +31,15 @@ pipeline {
                                     
                     steps {
           
-//                        docker version // DOCKER_CERT_PATH is automatically picked up by the Docker client       
+//                   //     docker version // DOCKER_CERT_PATH is automatically picked up by the Docker client       
                         echo 'Clonando Repositorio' 
-                       sh 'docker --version'
+                       //sh 'docker --version'
                         echo 'maven build'        
                         sh 'mvn clean package'
-                       sh 'docker rm agustin-nexus'
+                      // sh 'docker rm agustin-nexus'
                                 
-                      sh  'docker build -t agustin-nexus .'
-                      sh 'docker container run -p 8765:8765 --name agustin-nexus --network agu-network  agustin-nexus'
+                     // sh  'docker build -t agustin-nexus .'
+                     // sh 'docker container run -p 8765:8765 --name agustin-nexus --network agu-network  agustin-nexus'
                     }
                         }
                         
