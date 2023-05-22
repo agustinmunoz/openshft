@@ -33,7 +33,7 @@ pipeline {
           
 //                   //     docker version // DOCKER_CERT_PATH is automatically picked up by the Docker client       
                         echo 'Clonando Repositorio' 
-                       //sh 'docker --version'
+                       sh 'docker --version'
                         echo 'maven build'        
                         sh 'mvn clean package'
                       // sh 'docker rm agustin-nexus'
